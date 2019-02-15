@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Flask 模板示例入口</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+{{ super() }}
+-- Index Page
+{% endblock %}
+
+{% block page_content %}
+<div class="page_header">
     <ol>
         <li><a href="{{ url_for('user', name=100) }}"}}>传参处理示例</a></li>
         <li><a href="{{ url_for('tempo') }}"}}>继承自定义base.html模板示例</a></li>
         <li><a href="{{ url_for('bootstrap_tempo', name='world') }}"}}>继承Bootstrap的base.html模板示例</a></li>
     </ol>
-</body>
-</html>
+
+</div>
+{% endblock %}

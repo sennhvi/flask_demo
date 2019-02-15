@@ -34,5 +34,10 @@ def tempo():
 def bootstrap_tempo(name):
     return render_template("bootstrap_demo.html", name=name)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
 if __name__ == "__main__":
     app.run(debug=True)
